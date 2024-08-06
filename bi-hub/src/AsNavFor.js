@@ -2,6 +2,7 @@ import React, { useState, useEffect, useRef } from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import "./AsNavFor.css";
 
 function AsNavFor() {
   const [nav1, setNav1] = useState(null);
@@ -10,9 +11,24 @@ function AsNavFor() {
   let sliderRef2 = useRef(null);
 
   const setores = [
-    { nome: "ADS - Administração Setorial", bis: ["BI ADS 1", "BI ADS 2", "BI ADS 3"] },
-    { nome: "CCCO - Coordenadoria de Contratos de Concessão", bis: ["BI CCCO 1", "BI CCCO 2"] },
-    { nome: "ADI - Assessoria de Demandas Institucionais", bis: ["BI ADI 1", "BI ADI 2", "BI ADI 3", "BI ADI 4"] }
+    { 
+      nome: "ADS - Administração Setorial", 
+      imagem: "/imagens/ads.png", 
+      bis: [
+        { nome: "BI ADS 1", imagem: "/imagens/ads.png" },
+        { nome: "BI ADS 2", imagem: "/imagens/bi_ads_2.jpg" },
+        { nome: "BI ADS 3", imagem: "/imagens/bi_ads_3.jpg" }
+      ]
+    },
+    {
+      nome: "CCCO - Coordenadoria de Contratos de Concessão",
+      imagem: "/imagens/ads.png", 
+      bis: [
+        { nome: "BI CCCO 1", imagem: "/imagens/ads.png" },
+        { nome: "BI ADS 2", imagem: "/imagens/bi_ads_2.jpg" },
+        { nome: "BI ADS 3", imagem: "/imagens/bi_ads_3.jpg" }
+      ]
+    }
   ];
 
   const [setorAtual, setSetorAtual] = useState(0);
@@ -50,24 +66,30 @@ function AsNavFor() {
   };
 
   return (
-    <div className="slider-container">
-      <h2>Setores e PowerBIs</h2>
-      <h4>Setores</h4>
-      <Slider {...settingsSlider1} ref={slider => (sliderRef1 = slider)}>
-        {setores.map((setor, index) => (
-          <div key={index}>
-            <h3>{setor.nome}</h3>
-          </div>
-        ))}
-      </Slider>
-      <h4>PowerBIs do Setor</h4>
-      <Slider {...settingsSlider2} ref={slider => (sliderRef2 = slider)}>
-        {setores[setorAtual].bis.map((bi, index) => (
-          <div key={index}>
-            <h3>{bi}</h3>
-          </div>
-        ))}
-      </Slider>
+    <div className="sliders-container">
+      <div className="slider-section">
+        <h4>Setores</h4>
+        <Slider {...settingsSlider1} ref={slider => (sliderRef1 = slider)} className="slider-setores">
+          {setores.map((setor, index) => (
+            <div key={index} className="setor-slide">
+              <img src={setor.imagem} alt={setor.nome} />
+              <h3>{setor.nome}</h3>
+            </div>
+          ))}
+        </Slider>
+      </div>
+      
+      <div className="slider-section">
+        <h4>PowerBIs do Setor</h4>
+        <Slider {...settingsSlider2} ref={slider => (sliderRef2 = slider)} className="slider-bis">
+          {setores[setorAtual].bis.map((bi, index) => (
+            <div key={index} className="bi-slide">
+              <img src={bi.imagem} alt={bi.nome} />
+              <h3>{bi.nome}</h3>
+            </div>
+          ))}
+        </Slider>
+      </div>
     </div>
   );
 }

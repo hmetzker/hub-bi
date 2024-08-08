@@ -6,7 +6,9 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <img src="/images/RIOPREFEITURA_horizontal_branco.png" alt="Logo Prefeitura Rio" className="App-logo" />
+        <a href="https://transportes.prefeitura.rio/" target="_blank" rel="noopener noreferrer">
+          <img src="/images/RIOPREFEITURA_horizontal_branco.png" alt="Logo Prefeitura Rio" className="App-logo" />
+        </a>
         <h1>BI Hub</h1>
       </header>
       <AsNavFor />

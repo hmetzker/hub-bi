@@ -1,7 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&display=swap');
+
 .sliders-container {
-    background-color: #003366;
-    color: white;
-    font-family: Arial, sans-serif;
+    background-color: white;
+    color: #00508a;
+    font-family: 'Oswald', sans-serif;
     padding: 20px;
   }
   
@@ -10,8 +12,12 @@
   }
   
   .slider-section h4 {
-    font-size: 18px;
+    font-size: 24px;
+    font-weight: 700;
+    color: #00508a;
     margin-bottom: 15px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
   }
   
   .slider-setores, .slider-bis {
@@ -31,23 +37,27 @@
   }
   
   .setor-slide h3, .bi-slide h3 {
-    background-color: rgba(255, 255, 255, 0.1);
+    font-family: 'Oswald', sans-serif;
+    font-weight: 700;
+    font-size: 18px;
+    text-transform: uppercase;
+    background-color: rgba(0, 80, 138, 0.1);
     padding: 10px;
     border-radius: 5px;
     text-align: center;
     margin-top: 10px;
-    font-size: 16px;
+    color: #00508a;
   }
   
   /* Estilizar setas de navegação */
   .slick-prev:before,
   .slick-next:before {
-    color: white;
+    color: #00508a;
   }
   
   /* Estilize os dots */
   .slick-dots li button:before {
-    color: white;
+    color: #00508a;
   }
   
   .slick-dots li.slick-active button:before {

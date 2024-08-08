@@ -1,20 +1,27 @@
+.App {
+  text-align: center;
+}
+
 .App-header {
-  background-color: white;
-  min-height: 80px;
+  background-color: #005585;
+  min-height: 85px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0 20px;
+  padding: 0 40px;
   box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
 .App-logo {
-  height: 60px; /* Ajuste este valor conforme necessário */
-  width: auto; /* Isso manterá a proporção da imagem */
+  height: 50px;
+  width: auto;
+  max-width: 100%;
+  display: block;
+  object-fit: contain;
 }
 
 h1 {
-  color: #003366;
-  font-size: 24px;
+  color: #ffffff;
+  font-size: 20px;
   margin: 0;
 }

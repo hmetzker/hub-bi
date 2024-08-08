@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef } from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import "./AsNavFor.css";
+import "../styles/AsNavFor.css";
 
 function AsNavFor() {
   const [nav1, setNav1] = useState(null);
@@ -13,20 +13,20 @@ function AsNavFor() {
   const setores = [
     { 
       nome: "ADS - Administração Setorial", 
-      imagem: "/imagens/ads.png", 
+      imagem: "/images/ads.png", 
       bis: [
-        { nome: "BI ADS 1", imagem: "/imagens/ads.png" },
-        { nome: "BI ADS 2", imagem: "/imagens/bi_ads_2.jpg" },
-        { nome: "BI ADS 3", imagem: "/imagens/bi_ads_3.jpg" }
+        { nome: "BI ADS 1", imagem: "/images/ads.png" },
+        { nome: "BI ADS 2", imagem: "/images/bi_ads_2.jpg" },
+        { nome: "BI ADS 3", imagem: "/images/bi_ads_3.jpg" }
       ]
     },
     {
       nome: "CCCO - Coordenadoria de Contratos de Concessão",
-      imagem: "/imagens/ads.png", 
+      imagem: "/images/ads.png", 
       bis: [
-        { nome: "BI CCCO 1", imagem: "/imagens/ads.png" },
-        { nome: "BI ADS 2", imagem: "/imagens/bi_ads_2.jpg" },
-        { nome: "BI ADS 3", imagem: "/imagens/bi_ads_3.jpg" }
+        { nome: "BI CCCO 1", imagem: "/images/ads.png" },
+        { nome: "BI ADS 2", imagem: "/images/bi_ads_2.jpg" },
+        { nome: "BI ADS 3", imagem: "/images/bi_ads_3.jpg" }
       ]
     }
   ];

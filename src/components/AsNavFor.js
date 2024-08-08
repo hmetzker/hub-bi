@@ -11,22 +11,31 @@ function AsNavFor() {
   let sliderRef2 = useRef(null);
 
   const setores = [
-    { 
-      nome: "ADS - Administração Setorial", 
-      imagem: "/images/ads.png", 
+    {
+      nome: "ADS - Administração Setorial",
+      imagem: "/images/ads.png",
       bis: [
-        { nome: "BI ADS 1", imagem: "/images/ads.png" },
-        { nome: "BI ADS 2", imagem: "/images/bi_ads_2.jpg" },
-        { nome: "BI ADS 3", imagem: "/images/bi_ads_3.jpg" }
+        { nome: "BI ADS 1", imagem: "/images/ads.png", url: "https://url-do-bi-ads-1.com" },
+        { nome: "BI ADS 2", imagem: "/images/bi_ads_2.jpg", url: "https://url-do-bi-ads-2.com" },
+        { nome: "BI ADS 3", imagem: "/images/bi_ads_3.jpg", url: "https://url-do-bi-ads-3.com" }
       ]
     },
     {
       nome: "CCCO - Coordenadoria de Contratos de Concessão",
-      imagem: "/images/ads.png", 
+      imagem: "/images/ads.png",
       bis: [
-        { nome: "BI CCCO 1", imagem: "/images/ads.png" },
-        { nome: "BI ADS 2", imagem: "/images/bi_ads_2.jpg" },
-        { nome: "BI ADS 3", imagem: "/images/bi_ads_3.jpg" }
+        { nome: "BI CCCO 1", imagem: "/images/ads.png", url: "https://url-do-bi-ccco-1.com" },
+        { nome: "BI CCCO 2", imagem: "/images/bi_ads_2.jpg", url: "https://url-do-bi-ads-2.com" },
+        { nome: "BI CCCO 3", imagem: "/images/bi_ads_3.jpg", url: "https://url-do-bi-ads-3.com" }
+      ]
+    },
+    {
+      nome: "ADI - Coordenadoria de Contratos de Concessão",
+      imagem: "/images/ads.png",
+      bis: [
+        { nome: "BI ADI 1", imagem: "/images/ads.png", url: "https://url-do-bi-ccco-1.com" },
+        { nome: "BI ADI 2", imagem: "/images/bi_ads_2.jpg", url: "https://url-do-bi-ads-2.com" },
+        { nome: "BI ADI 3", imagem: "/images/bi_ads_3.jpg", url: "https://url-do-bi-ads-3.com" }
       ]
     }
   ];
@@ -51,7 +60,11 @@ function AsNavFor() {
     speed: 500,
     slidesToShow: 1,
     slidesToScroll: 1,
-    beforeChange: (current, next) => handleSetorChange(next)
+    beforeChange: (current, next) => handleSetorChange(next),
+    swipe: true,
+    swipeToSlide: true,
+    touchThreshold: 1000,
+    preventDefaultTouchmoveEvent: true
   };
 
   const settingsSlider2 = {
@@ -61,8 +74,9 @@ function AsNavFor() {
     slidesToShow: 3,
     slidesToScroll: 1,
     swipeToSlide: true,
-    focusOnSelect: true,
-    adaptiveHeight: true
+    focusOnSelect: false,
+    adaptiveHeight: true,
+    preventDefaultTouchmoveEvent: true
   };
 
   return (
@@ -84,8 +98,10 @@ function AsNavFor() {
         <Slider {...settingsSlider2} ref={slider => (sliderRef2 = slider)} className="slider-bis">
           {setores[setorAtual].bis.map((bi, index) => (
             <div key={index} className="bi-slide">
-              <img src={bi.imagem} alt={bi.nome} />
-              <h3>{bi.nome}</h3>
+              <a href={bi.url} target="_blank" rel="noopener noreferrer">
+                <img src={bi.imagem} alt={bi.nome} />
+                <h3>{bi.nome}</h3>
+              </a>
             </div>
           ))}
         </Slider>

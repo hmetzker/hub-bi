@@ -4,11 +4,11 @@
     background-color: white;
     color: #00508a;
     font-family: 'Oswald', sans-serif;
-    padding: 20px;
+    padding: 10px;
   }
   
   .slider-section {
-    margin-bottom: 40px;
+    margin-bottom: 80px;
   }
   
   .slider-section h4 {
@@ -25,15 +25,12 @@
     max-width: 800px;
   }
   
-  .setor-slide, .bi-slide {
-    padding: 10px;
-  }
-  
   .setor-slide img, .bi-slide img {
-    width: 100%;
+    width: calc(100% - 10px);
     height: 150px;
     object-fit: cover;
     border-radius: 5px;
+    margin: 0 auto;
   }
   
   .setor-slide h3, .bi-slide h3 {

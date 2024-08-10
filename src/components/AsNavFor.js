@@ -94,7 +94,7 @@ function AsNavFor() {
       </div>
       
       <div className="slider-section">
-        <h4>PowerBIs do Setor</h4>
+        <h4>BI's</h4>
         <Slider {...settingsSlider2} ref={slider => (sliderRef2 = slider)} className="slider-bis">
           {setores[setorAtual].bis.map((bi, index) => (
             <div key={index} className="bi-slide">

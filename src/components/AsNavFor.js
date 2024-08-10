@@ -13,29 +13,30 @@ function AsNavFor() {
   const setores = [
     {
       nome: "ADS - Administração Setorial",
-      imagem: "/images/ads.png",
       bis: [
-        { nome: "BI ADS 1", imagem: "/images/ads.png", url: "https://url-do-bi-ads-1.com" },
-        { nome: "BI ADS 2", imagem: "/images/bi_ads_2.jpg", url: "https://url-do-bi-ads-2.com" },
-        { nome: "BI ADS 3", imagem: "/images/bi_ads_3.jpg", url: "https://url-do-bi-ads-3.com" }
+        { nome: "Recursos Humanos", imagem: "/images/grh.png", url: "https://app.powerbi.com/view?r=eyJrIjoiZTlkYWM0NTAtNzEwNS00MTg5LThiODEtYWY5NTg0ZmRmOWNkIiwidCI6IjkwNzI2YWVlLWQwMmMtNDlmZS05ODlmLTQ1ZGVmM2QwNjlkYyJ9"},
+        { nome: "Contratos", imagem: "/images/contratos.png", url: "https://app.powerbi.com/view?r=eyJrIjoiZTUzNDIwN2EtZDlhZS00MTk5LWJjNjQtZTQxZTEyYjg2OGYyIiwidCI6IjkwNzI2YWVlLWQwMmMtNDlmZS05ODlmLTQ1ZGVmM2QwNjlkYyJ9"},
+        { nome: "Protocolo", imagem: "/images/protocolo.png", url: "https://app.powerbi.com/view?r=eyJrIjoiOTgxNDM0NDktZmJjYS00MDYwLWI1YmUtOWIzNTQ4MDc0ODhhIiwidCI6IjkwNzI2YWVlLWQwMmMtNDlmZS05ODlmLTQ1ZGVmM2QwNjlkYyJ9"}
       ]
     },
     {
       nome: "CCCO - Coordenadoria de Contratos de Concessão",
-      imagem: "/images/ads.png",
       bis: [
-        { nome: "BI CCCO 1", imagem: "/images/ads.png", url: "https://url-do-bi-ccco-1.com" },
-        { nome: "BI CCCO 2", imagem: "/images/bi_ads_2.jpg", url: "https://url-do-bi-ads-2.com" },
-        { nome: "BI CCCO 3", imagem: "/images/bi_ads_3.jpg", url: "https://url-do-bi-ads-3.com" }
+        { nome: "STPL", imagem: "/images/ads.png", url: "https://url-do-bi-ccco-1.com" },
+        { nome: "Histórico de Índices", imagem: "/images/indices.png", url: "https://app.powerbi.com/view?r=eyJrIjoiZmU0NzAyNzctMWEyNS00YzFiLTllMWQtOTUwMGRlMGFhMDhmIiwidCI6IjkwNzI2YWVlLWQwMmMtNDlmZS05ODlmLTQ1ZGVmM2QwNjlkYyJ9"},
+        { nome: "Multa Disciplinar", imagem: "/images/multa_disciplinar.png", url: "https://app.powerbi.com/view?r=eyJrIjoiYTkyMTc5MmEtMzI0Ni00ZDJlLTk0ODktZTM4NjQ2Yjc2MzFmIiwidCI6IjkwNzI2YWVlLWQwMmMtNDlmZS05ODlmLTQ1ZGVmM2QwNjlkYyJ9"}
       ]
     },
     {
       nome: "ADI - Coordenadoria de Contratos de Concessão",
-      imagem: "/images/ads.png",
       bis: [
-        { nome: "BI ADI 1", imagem: "/images/ads.png", url: "https://url-do-bi-ccco-1.com" },
-        { nome: "BI ADI 2", imagem: "/images/bi_ads_2.jpg", url: "https://url-do-bi-ads-2.com" },
         { nome: "BI ADI 3", imagem: "/images/bi_ads_3.jpg", url: "https://url-do-bi-ads-3.com" }
+      ]
+    },
+    {
+      nome: "CORIN - Comissão de Recursos de Infração",
+      bis: [
+        { nome: "Controle Processos", imagem: "/images/corin.png", url: "https://app.powerbi.com/view?r=eyJrIjoiNGYxODE0NTMtMGU3YS00NWExLWFhZTktZjBiOGU4YzYzOTNiIiwidCI6IjkwNzI2YWVlLWQwMmMtNDlmZS05ODlmLTQ1ZGVmM2QwNjlkYyJ9" }
       ]
     }
   ];
@@ -86,7 +87,6 @@ function AsNavFor() {
         <Slider {...settingsSlider1} ref={slider => (sliderRef1 = slider)} className="slider-setores">
           {setores.map((setor, index) => (
             <div key={index} className="setor-slide">
-              <img src={setor.imagem} alt={setor.nome} />
               <h3>{setor.nome}</h3>
             </div>
           ))}

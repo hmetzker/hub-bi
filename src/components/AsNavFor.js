@@ -5,10 +5,10 @@ import "slick-carousel/slick/slick-theme.css";
 import "../styles/AsNavFor.css";
 
 function AsNavFor() {
-  const [nav1, setNav1] = useState(null);
-  const [nav2, setNav2] = useState(null);
-  let sliderRef1 = useRef(null);
-  let sliderRef2 = useRef(null);
+  const sliderRef1 = useRef(null);
+  const sliderRef2 = useRef(null);
+
+  const [setorAtual, setSetorAtual] = useState(0);
 
   const setores = [
     {
@@ -41,18 +41,15 @@ function AsNavFor() {
     }
   ];
 
-  const [setorAtual, setSetorAtual] = useState(0);
-
   useEffect(() => {
-    setNav1(sliderRef1);
-    setNav2(sliderRef2);
-  }, []);
+    if (sliderRef1.current && sliderRef2.current) {
+      sliderRef1.current.slickGoTo(setorAtual);
+      sliderRef2.current.slickGoTo(0);
+    }
+  }, [setorAtual]);
 
   const handleSetorChange = (index) => {
     setSetorAtual(index);
-    if (sliderRef2) {
-      sliderRef2.slickGoTo(0);
-    }
   };
 
   const settingsSlider1 = {
@@ -84,7 +81,7 @@ function AsNavFor() {
     <div className="sliders-container">
       <div className="slider-section">
         <h4>Setores</h4>
-        <Slider {...settingsSlider1} ref={slider => (sliderRef1 = slider)} className="slider-setores">
+        <Slider {...settingsSlider1} ref={sliderRef1} className="slider-setores">
           {setores.map((setor, index) => (
             <div key={index} className="setor-slide">
               <h3>{setor.nome}</h3>
@@ -95,7 +92,7 @@ function AsNavFor() {
       
       <div className="slider-section">
         <h4>BI's</h4>
-        <Slider {...settingsSlider2} ref={slider => (sliderRef2 = slider)} className="slider-bis">
+        <Slider {...settingsSlider2} ref={sliderRef2} className="slider-bis">
           {setores[setorAtual].bis.map((bi, index) => (
             <div key={index} className="bi-slide">
               <a href={bi.url} target="_blank" rel="noopener noreferrer">

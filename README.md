@@ -1,70 +1,54 @@
-# Getting Started with Create React App
+# Hub BI - Central de Business Intelligence
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Descrição
+Este projeto é uma central de Business Intelligence (BI) desenvolvida com React e hospedada no Firebase. Ele fornece uma interface para visualizar e acessar diferentes dashboards de BI.
 
-## Available Scripts
+## Pré-requisitos
+- Node.js (versão 18 ou superior)
+- npm (geralmente vem com o Node.js)
+- Conta no Firebase
 
-In the project directory, you can run:
+## Configuração do Projeto
 
-### `npm start`
+### 1. Clone o repositório
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+git clone https://github.com/seu-usuario/hub-bi.git
+cd hub-bi
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### 2. Instale as dependências
 
-### `npm test`
+npm install
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### 3. Configure o Firebase
+- Crie um projeto no [Firebase Console](https://console.firebase.google.com/)
+- Ative o Firebase Hosting para o seu projeto
+- Instale o Firebase CLI globalmente:
+  ```
+  npm install -g firebase-tools
+  ```
+- Faça login no Firebase:
+  ```
+  firebase login
+  ```
+- Inicialize o Firebase no seu projeto:
+  ```
+  firebase init
+  ```
+  Selecione "Hosting" quando perguntado sobre quais recursos deseja configurar
 
-### `npm run build`
+### 4. Desenvolvimento local
+Para rodar o projeto localmente:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+npm start
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### 5. Build e Deploy
+Para criar uma versão de produção e fazer o deploy:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+npm run build
+firebase deploy
 
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Estrutura do Projeto
+- `src/`: Contém os arquivos fonte do React
+- `public/`: Arquivos públicos, incluindo `index.html`
+- `build/`: Diretório de build (gerado após `npm run build`)
+- `.github/workflows/`: Configurações do GitHub Actions para CI/CD
